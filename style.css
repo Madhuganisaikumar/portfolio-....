@@ -1,0 +1,44 @@
+body {
+    background-color: #0b0f1a;
+    color: #e5e7eb;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.boot {
+    font-size: 34px;
+    color: #00f5ff;
+    margin-top: 80px;
+}
+
+.boot-text {
+    color: #9ca3af;
+    margin-top: 8px;
+}
+
+.terminal {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 30px;
+    border-left: 3px solid #00f5ff;
+    font-size: 18px;
+}
+
+.name {
+    color: #00f5ff;
+    font-size: 32px;
+}
+
+.panel {
+    background: rgba(15, 23, 42, 0.85);
+    padding: 20px;
+    border: 1px solid rgba(0, 245, 255, 0.25);
+    border-radius: 6px;
+}
+
+.skill {
+    margin-top: 14px;
+    color: #7c7cff;
+}
+
+.stProgress > div > div {
+    background: linear-gradient(90deg, #00f5ff, #7c7cff);
+}
