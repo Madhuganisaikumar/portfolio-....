@@ -1,4 +1,4 @@
-# Cyberpunk Streamlit Portfolio ⚡
+# Cyberpunk  Portfolio ⚡
 
 A clean cyberpunk-style developer portfolio built using Streamlit.
 
