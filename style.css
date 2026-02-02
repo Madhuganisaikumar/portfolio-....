@@ -4,6 +4,29 @@ body {
     font-family: "JetBrains Mono", monospace;
 }
 
+/* CYBER GRID BACKGROUND */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0,245,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,245,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(124,124,255,0.08), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* BOOT */
 .boot {
     font-size: 34px;
     color: #00f5ff;
@@ -15,46 +38,63 @@ body {
     margin-top: 8px;
 }
 
-.terminal {
-    background: rgba(0, 0, 0, 0.65);
-    padding: 30px;
-    border-left: 3px solid #00f5ff;
-    font-size: 18px;
-}
-
-.name {
-    color: #00f5ff;
-    font-size: 32px;
-}
-
-.panel {
-    background: rgba(15, 23, 42, 0.85);
-    padding: 20px;
-    border: 1px solid rgba(0, 245, 255, 0.25);
-    border-radius: 6px;
-}
-
-.skill {
-    margin-top: 14px;
-    color: #7c7cff;
-}
-
-.stProgress > div > div {
-    background: linear-gradient(90deg, #00f5ff, #7c7cff);
-}
+/* TOP BAR */
 .topbar {
     background: rgba(0,0,0,0.8);
     padding: 10px 20px;
     border-bottom: 1px solid #00f5ff;
-    font-family: monospace;
+    z-index: 2;
 }
 
+/* STATUS DOT */
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #00f5ff;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 8px #00f5ff;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+/* SIDEBAR */
 .sidebar {
     margin-top: 20px;
     color: #7c7cff;
     font-weight: bold;
 }
 
+/* PANELS */
+.panel {
+    background: rgba(15, 23, 42, 0.85);
+    padding: 22px;
+    border: 1px solid rgba(0, 245, 255, 0.35);
+    border-radius: 8px;
+    box-shadow:
+        0 0 20px rgba(0,245,255,0.08),
+        inset 0 0 20px rgba(124,124,255,0.04);
+    z-index: 2;
+}
+
+/* SKILLS */
+.skill {
+    margin-top: 12px;
+    color: #7c7cff;
+}
+
+/* PROGRESS BAR */
+.stProgress > div > div {
+    background: linear-gradient(90deg, #00f5ff, #7c7cff);
+}
+
+/* WORKSPACE */
 .workspace {
     padding: 20px;
 }
@@ -64,13 +104,39 @@ body {
 }
 
 @keyframes slideIn {
-    from {
-        transform: translateX(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+    from { transform: translateX(30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
+
+/* SCAN LINE */
+.scanline {
+    position: fixed;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0,245,255,0.6), transparent);
+    animation: scan 6s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+/* TERMINAL */
+.terminal-box {
+    background: rgba(0,0,0,0.8);
+    border-top: 1px solid #00f5ff;
+    padding: 12px;
+    margin-top: 20px;
+}
+
+.terminal-line {
+    font-size: 14px;
+    color: #9ca3af;
+}
+
 
