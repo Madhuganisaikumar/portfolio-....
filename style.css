@@ -42,3 +42,35 @@ body {
 .stProgress > div > div {
     background: linear-gradient(90deg, #00f5ff, #7c7cff);
 }
+.topbar {
+    background: rgba(0,0,0,0.8);
+    padding: 10px 20px;
+    border-bottom: 1px solid #00f5ff;
+    font-family: monospace;
+}
+
+.sidebar {
+    margin-top: 20px;
+    color: #7c7cff;
+    font-weight: bold;
+}
+
+.workspace {
+    padding: 20px;
+}
+
+.slide {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
