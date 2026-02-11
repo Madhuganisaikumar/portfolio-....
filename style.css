@@ -4,7 +4,7 @@ body {
     font-family: "JetBrains Mono", monospace;
 }
 
-/* CYBER GRID BACKGROUND */
+/* CYBER GRID */
 body::before {
     content: "";
     position: fixed;
@@ -14,111 +14,63 @@ body::before {
         linear-gradient(90deg, rgba(0,245,255,0.05) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
-    z-index: 0;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(124,124,255,0.08), transparent 60%);
-    pointer-events: none;
-    z-index: 0;
 }
 
 /* BOOT */
-.boot {
-    font-size: 34px;
-    color: #00f5ff;
-    margin-top: 80px;
-}
-
-.boot-text {
-    color: #9ca3af;
-    margin-top: 8px;
-}
+.boot { font-size: 32px; color: #00f5ff; margin-top: 80px; }
+.boot-text { color: #9ca3af; }
 
 /* TOP BAR */
 .topbar {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     padding: 10px 20px;
     border-bottom: 1px solid #00f5ff;
-    z-index: 2;
 }
 
-/* STATUS DOT */
+/* STATUS */
 .status-dot {
-    display: inline-block;
     width: 8px;
     height: 8px;
     background: #00f5ff;
     border-radius: 50%;
+    display: inline-block;
     margin-right: 8px;
-    box-shadow: 0 0 8px #00f5ff;
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0% { opacity: 0.4; }
+    0% { opacity: 0.3; }
     50% { opacity: 1; }
-    100% { opacity: 0.4; }
-}
-
-/* SIDEBAR */
-.sidebar {
-    margin-top: 20px;
-    color: #7c7cff;
-    font-weight: bold;
+    100% { opacity: 0.3; }
 }
 
 /* PANELS */
 .panel {
     background: rgba(15, 23, 42, 0.85);
-    padding: 22px;
-    border: 1px solid rgba(0, 245, 255, 0.35);
-    border-radius: 8px;
-    box-shadow:
-        0 0 20px rgba(0,245,255,0.08),
-        inset 0 0 20px rgba(124,124,255,0.04);
-    z-index: 2;
-}
-
-/* SKILLS */
-.skill {
-    margin-top: 12px;
-    color: #7c7cff;
-}
-
-/* PROGRESS BAR */
-.stProgress > div > div {
-    background: linear-gradient(90deg, #00f5ff, #7c7cff);
-}
-
-/* WORKSPACE */
-.workspace {
     padding: 20px;
+    border: 1px solid rgba(0,245,255,0.35);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,245,255,0.08);
 }
 
-.slide {
-    animation: slideIn 0.5s ease-out;
+/* PROJECT DIALOG */
+.dialog {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+    border: 1px solid #7c7cff;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(124,124,255,0.15);
 }
 
-@keyframes slideIn {
-    from { transform: translateX(30px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-/* SCAN LINE */
+/* SCANLINE */
 .scanline {
     position: fixed;
     top: -10%;
-    left: 0;
     width: 100%;
     height: 2px;
     background: linear-gradient(90deg, transparent, rgba(0,245,255,0.6), transparent);
     animation: scan 6s linear infinite;
-    z-index: 1;
-    pointer-events: none;
 }
 
 @keyframes scan {
@@ -126,17 +78,20 @@ body::after {
     100% { top: 110%; }
 }
 
-/* TERMINAL */
-.terminal-box {
-    background: rgba(0,0,0,0.8);
-    border-top: 1px solid #00f5ff;
-    padding: 12px;
-    margin-top: 20px;
+/* WORKSPACE */
+.workspace { padding: 20px; }
+.slide { animation: slideIn 0.5s ease-out; }
+
+@keyframes slideIn {
+    from { transform: translateX(30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
 
-.terminal-line {
-    font-size: 14px;
-    color: #9ca3af;
+/* SKILLS */
+.skill { margin-top: 12px; color: #7c7cff; }
+.stProgress > div > div {
+    background: linear-gradient(90deg, #00f5ff, #7c7cff);
 }
+
 
 
