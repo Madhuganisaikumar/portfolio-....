@@ -109,14 +109,84 @@ with right:
             st.progress(v)
 
     # -------- PROJECTS --------
-    elif st.session_state.module == "PROJECTS":
-        st.markdown("<div class='panel'><b>OPERATIONS</b></div>", unsafe_allow_html=True)
+  elif st.session_state.module == "PROJECTS":
+    st.markdown("<div class='panel'><b>OPERATIONS / PROJECT MODULE</b></div>", unsafe_allow_html=True)
 
-        if st.button("Inspect: Data Leak Detection"):
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # -------- PROJECT SELECTION --------
+    col1, col2 = st.columns(2)
+
+    with col1:
+        if st.button("Inspect: Data Leak Detection Tool"):
             st.session_state.active_project = "DLD"
 
-        if st.button("Inspect: Circular DNA Analysis"):
+    with col2:
+        if st.button("Inspect: Circular DNA Prediction Tool"):
             st.session_state.active_project = "DNA"
+
+    # -------- PROJECT DETAILS (SYSTEM DIALOGS) --------
+    if st.session_state.active_project == "DLD":
+        st.markdown("""
+        <div class="dialog">
+        <b>OPERATION: DATA LEAK DETECTION TOOL</b><br><br>
+
+        <b>CLASSIFICATION</b> : Security Monitoring System<br>
+        <b>DOMAIN</b> : Cybersecurity / Data Protection<br><br>
+
+        <b>SYSTEM DESCRIPTION</b><br>
+        A security-focused system designed to detect and prevent unauthorized
+        exposure of sensitive organizational data. The tool continuously
+        monitors data usage and movement across files and systems to identify
+        suspicious activities such as unauthorized access, abnormal downloads,
+        and data sharing outside approved channels.<br><br>
+
+        Using rule-based detection and pattern matching, the system identifies
+        sensitive information including personal data, credentials, API keys,
+        and confidential documents.<br><br>
+
+        <b>INCIDENT RESPONSE</b><br>
+        • Generates real-time alerts on potential data leaks<br>
+        • Records detailed security logs for investigation<br>
+        • Supports forensic analysis and policy improvement<br><br>
+
+        <b>IMPACT</b><br>
+        • Prevents confidential data exposure<br>
+        • Reduces risk of data breaches<br>
+        • Strengthens organizational security posture
+        </div>
+        """, unsafe_allow_html=True)
+
+    elif st.session_state.active_project == "DNA":
+        st.markdown("""
+        <div class="dialog">
+        <b>OPERATION: CIRCULAR DNA PREDICTION TOOL</b><br><br>
+
+        <b>CLASSIFICATION</b> : Bioinformatics Analysis System<br>
+        <b>DOMAIN</b> : Genomics / Computational Biology<br><br>
+
+        <b>SYSTEM DESCRIPTION</b><br>
+        An automated bioinformatics system designed to identify and predict
+        circular DNA structures from genomic sequence data. The system analyzes
+        biological patterns and structural signals such as repeat regions and
+        sequence motifs to distinguish circular DNA from linear DNA with
+        high accuracy.<br><br>
+
+        The tool efficiently processes large genomic datasets, enabling
+        scalable and reliable analysis for research environments.<br><br>
+
+        <b>AUTOMATION & OUTPUT</b><br>
+        • Automated DNA sequence processing<br>
+        • Detection of circular DNA indicators<br>
+        • Generation of structured prediction reports<br><br>
+
+        <b>IMPACT</b><br>
+        • Accelerates genomic research workflows<br>
+        • Reduces manual analysis effort<br>
+        • Improves accuracy in circular DNA identification
+        </div>
+        """, unsafe_allow_html=True)
+
 
         # ---- PROJECT DIALOG ----
         if st.session_state.active_project == "DLD":
